@@ -18,7 +18,7 @@ namespace laba6
     public partial class Form1 : Form
     {
         string connectionString1 = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\\;Extended Properties='text;HDR=Yes;FMT=Delimited'";
-        string connectionString2 = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\veronika\\Desktop\\laba6\\laba6\\bin\\Debug;Extended Properties='text;HDR=Yes;FMT=Delimited'";
+        string connectionString2 = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\\laba6\\laba6\\bin\\Debug;Extended Properties='text;HDR=Yes;FMT=Delimited'";
         //OleDbConnection StrCon = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\;Extended Properties='Text;HDR=Yes;FMT=Delimited;IMEX=1';Persist Security Info=False");
         public Form1()
         {
@@ -121,39 +121,39 @@ namespace laba6
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OleDbConnection connection = new OleDbConnection(connectionString2);
-                string Select2 = textBox1.Text;
-                OleDbCommand comand2 = new OleDbCommand(Select2, connection);
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        OleDbConnection connection = new OleDbConnection(connectionString2);
+        //        string Select2 = textBox1.Text;
+        //        OleDbCommand comand2 = new OleDbCommand(Select2, connection);
 
-                OleDbDataAdapter adapter2 = new OleDbDataAdapter(comand2);
+        //        OleDbDataAdapter adapter2 = new OleDbDataAdapter(comand2);
 
-                DataSet AllTables = new DataSet();
-                connection.Open();
+        //        DataSet AllTables = new DataSet();
+        //        connection.Open();
 
-                adapter2.Fill(AllTables);
+        //        adapter2.Fill(AllTables);
 
-                dataGridView1.DataSource = AllTables.Tables[0];
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                OleDbConnection connection = new OleDbConnection(connectionString2);
-                connection.Close();
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //        dataGridView1.DataSource = AllTables.Tables[0];
+        //        connection.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        OleDbConnection connection = new OleDbConnection(connectionString2);
+        //        connection.Close();
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
         public void ShowData(DataTable dt)
         {
             dataGridView1.DataSource = dt;
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+        //private void textBox1_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void button3_Click(object sender, EventArgs e)
         {

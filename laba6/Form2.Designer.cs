@@ -47,7 +47,14 @@
             this.execute1 = new System.Windows.Forms.Button();
             this.execute2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            //this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.columnsThird = new System.Windows.Forms.CheckedListBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.col4 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pattern = new System.Windows.Forms.TextBox();
+            this.execute3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,6 +146,7 @@
             this.col2.Name = "col2";
             this.col2.Size = new System.Drawing.Size(121, 28);
             this.col2.TabIndex = 10;
+            this.col2.SelectedIndexChanged += new System.EventHandler(this.col2_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -156,6 +164,7 @@
             this.val2.Name = "val2";
             this.val2.Size = new System.Drawing.Size(121, 28);
             this.val2.TabIndex = 12;
+            this.val2.SelectedIndexChanged += new System.EventHandler(this.val2_SelectedIndexChanged);
             // 
             // col3
             // 
@@ -164,6 +173,7 @@
             this.col3.Name = "col3";
             this.col3.Size = new System.Drawing.Size(121, 28);
             this.col3.TabIndex = 13;
+            this.col3.SelectedIndexChanged += new System.EventHandler(this.col3_SelectedIndexChanged);
             // 
             // val3
             // 
@@ -172,6 +182,7 @@
             this.val3.Name = "val3";
             this.val3.Size = new System.Drawing.Size(121, 28);
             this.val3.TabIndex = 14;
+            this.val3.SelectedIndexChanged += new System.EventHandler(this.val3_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -204,9 +215,9 @@
             // 
             // execute2
             // 
-            this.execute2.Location = new System.Drawing.Point(1196, 213);
+            this.execute2.Location = new System.Drawing.Point(1145, 206);
             this.execute2.Name = "execute2";
-            this.execute2.Size = new System.Drawing.Size(131, 29);
+            this.execute2.Size = new System.Drawing.Size(142, 41);
             this.execute2.TabIndex = 18;
             this.execute2.Text = "Execute";
             this.execute2.UseVisualStyleBackColor = true;
@@ -215,28 +226,100 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(527, 288);
+            this.dataGridView2.Location = new System.Drawing.Point(947, 333);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.Size = new System.Drawing.Size(411, 201);
             this.dataGridView2.TabIndex = 19;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(959, 321);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(354, 117);
-            this.textBox1.TabIndex = 20;
+            //this.textBox1.Location = new System.Drawing.Point(287, 426);
+            //this.textBox1.Multiline = true;
+            //this.textBox1.Name = "textBox1";
+            //this.textBox1.Size = new System.Drawing.Size(354, 117);
+            //this.textBox1.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(39, 371);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 20);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "SELECT";
+            // 
+            // columnsThird
+            // 
+            this.columnsThird.FormattingEnabled = true;
+            this.columnsThird.Location = new System.Drawing.Point(117, 371);
+            this.columnsThird.Name = "columnsThird";
+            this.columnsThird.Size = new System.Drawing.Size(120, 119);
+            this.columnsThird.TabIndex = 22;
+            this.columnsThird.SelectedIndexChanged += new System.EventHandler(this.columnsThird_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(256, 371);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(195, 20);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "FROM Database WHERE\r\n";
+            // 
+            // col4
+            // 
+            this.col4.FormattingEnabled = true;
+            this.col4.Location = new System.Drawing.Point(457, 368);
+            this.col4.Name = "col4";
+            this.col4.Size = new System.Drawing.Size(121, 28);
+            this.col4.TabIndex = 24;
+            this.col4.SelectedIndexChanged += new System.EventHandler(this.col4_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(597, 371);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 20);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "LIKE";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // pattern
+            // 
+            this.pattern.Location = new System.Drawing.Point(657, 365);
+            this.pattern.Multiline = true;
+            this.pattern.Name = "pattern";
+            this.pattern.Size = new System.Drawing.Size(145, 31);
+            this.pattern.TabIndex = 26;
+            this.pattern.TextChanged += new System.EventHandler(this.pattern_TextChanged);
+            // 
+            // execute3
+            // 
+            this.execute3.Location = new System.Drawing.Point(822, 360);
+            this.execute3.Name = "execute3";
+            this.execute3.Size = new System.Drawing.Size(104, 43);
+            this.execute3.TabIndex = 27;
+            this.execute3.Text = "Execute";
+            this.execute3.UseVisualStyleBackColor = true;
+            this.execute3.Click += new System.EventHandler(this.execute3_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 450);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1412, 565);
+            this.Controls.Add(this.execute3);
+            this.Controls.Add(this.pattern);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.col4);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.columnsThird);
+            this.Controls.Add(this.label9);
+           // this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.execute2);
             this.Controls.Add(this.execute1);
@@ -286,6 +369,13 @@
         private System.Windows.Forms.Button execute1;
         private System.Windows.Forms.Button execute2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox1;
+       // private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckedListBox columnsThird;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox col4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox pattern;
+        private System.Windows.Forms.Button execute3;
     }
 }

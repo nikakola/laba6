@@ -1,0 +1,6 @@
+id,Subject,Mark,student_id,Name
+1,Biology,10,1,Ivanov
+1,Math,8,1,Ivanov
+2,Math,9,2,Petrov
+3,Biology,7,3,Sidorov
+3,English,7,3,Sidorov
