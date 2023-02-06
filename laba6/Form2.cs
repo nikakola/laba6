@@ -24,6 +24,7 @@ namespace laba6
             getColumns();
             getValues();
             getV();
+            combo();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -63,6 +64,18 @@ namespace laba6
                 MessageBox.Show(ex.Message);
             }
         }
+        private void combo()
+        {
+            col1.DropDownStyle = ComboBoxStyle.DropDownList;
+            col2.DropDownStyle= ComboBoxStyle.DropDownList;
+            col3.DropDownStyle= ComboBoxStyle.DropDownList;
+            col4.DropDownStyle= ComboBoxStyle.DropDownList;
+            val1.DropDownStyle= ComboBoxStyle.DropDownList;
+            val2.DropDownStyle= ComboBoxStyle.DropDownList;
+            val3.DropDownStyle= ComboBoxStyle.DropDownList;
+      
+        }
+
 
         private void getV()
         {
